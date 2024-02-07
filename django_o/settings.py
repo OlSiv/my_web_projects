@@ -81,21 +81,22 @@ WSGI_APPLICATION = 'django_o.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
+# SQLite - 
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         # Feel free to alter this value to suit your needs.
-#         default='postgres://dbolsiv888_user:oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl@dpg-cmj48fla73kc739o8usg-a.oregon-postgres.render.com/dbolsiv888',
-#         conn_max_age=600
-#     )
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+# PostgreSQL - 
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        default='postgres://dbolsiv888_user:oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl@dpg-cmj48fla73kc739o8usg-a.oregon-postgres.render.com/dbolsiv888',
+        conn_max_age=600
+    )
+}
 
 
 # Password validation
