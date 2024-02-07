@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -16,10 +16,50 @@
     <main class="container">
         <div class="row text-center justify-content-center">
             <div class="col">
-                <h1 class="display-4">Hello World!</h1>
+                <h1 class="display-4">Hello World!!!</h1>
             </div>
         </div>
     </main>
+</body>
+
+</html> -->
+
+
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'render/css/styles.css' %} ">
+    <title>my site</title>
+</head>
+
+<body>
+
+    <logo>
+        <img src="{% static '/render/img/logo36x38.png' %}" alt="Logo">
+        <!-- "~/my_web_projects/render/static/render/logo36x38.png" , width="36px" height="38px" alt="logo"> -->
+    </logo>
+    <h1>
+        Оставайся на связи с друзьями, даже когда их нет рядом
+    </h1>
+
+    <kn1>
+        Зарегистрироваться
+    </kn1>
+
+    <kn2>
+        Войти
+    </kn2>
+
+    <im1>
+        <img src="{% static '/render/img/imag1.png' %}" alt="Frends">
+    </im1>
+
+
 </body>
 
 </html>
