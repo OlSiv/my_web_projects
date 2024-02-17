@@ -17,3 +17,4 @@ class Messages(models.Model):
     text_message = models.CharField(max_length=512)
     image = models.FilePathField()
     message_time = models.DateTimeField()
+#
