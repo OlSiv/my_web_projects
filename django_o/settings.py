@@ -23,16 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
-
+#>>>>>>>>>>>>
+#up - render.com
+#down - local 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 # DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['olsiv888.onrender.com']
 # ALLOWED_HOSTS = []
 
-
+#<<<<<<<<<<<<
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -102,6 +105,16 @@ DATABASES = {
         conn_max_age=600
     )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dbolsiv888',
+#         'USER': 'dbolsiv888_user',
+#         'PASSWORD': 'oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl',
+#         'HOST': 'dpg-cmj48fla73kc739o8usg-a', # - ???
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
