@@ -1,4 +1,9 @@
 from django.shortcuts import render
+#
+from .models import Message
+
 
 def index(request):
-    return render(request, 'render/index.html', {})
+    #
+    mess = Message.objects.all()
+    return render(request, 'render/index.html', {'mess': mess})
