@@ -26,7 +26,7 @@ class Command(BaseCommand):
 def clear_data():
     """Deletes all the table data"""
     # logger.info("Delete Address instances")
-    models.User.objects.all().delete()
+    models.AuthUser.objects.all().delete()
     models.Message.objects.all().delete()
 
 
@@ -42,10 +42,10 @@ def run_seed(self, mode):
         return
 
 
-    names = ["Anri", "Бобби", "Cindy", "Dan"]
-    nics = ["@anri", "@bobby", "@cindy", "@dan"]
+    names = ["Винсет Вега", "Elon Musk", "Александр", "Мия Уоллес"]
+    nics = ["@roizmangbn", "@elonmusk", "@sportsru", "@mia"]
     avatars = ["non_pyth"]
-    emails = ["anri@mail.com", "bobby@mail.com", "cindy@mail.com", "dan@mail.com"]
+    emails = ["vvega@mail.com", "emusk@mail.com", "sport@mail.com", "mia@mail.com"]
     passwords = ['11111111']
     registr_times = ["2023-01-29T12:30:56.000000Z", "2023-01-29T12:31:56.000000Z", "2023-01-29T12:32:56.000000Z", "2023-01-29T12:33:56.000000Z"]
 
@@ -100,13 +100,30 @@ def run_seed(self, mode):
 # ---------------------------------------------------------
     
     for i in range(4):
-        user = models.User(
-            name = names[i],
-            nic = nics[i],
-            avatar = avatars[0],
-            email = emails[i],
+        user = models.AuthUser(
             password = passwords[0],
-            registr_time = registr_times[i]
+            is_superuser = 0,
+            username = nics[i],
+            last_login = registr_times[i],
+            email = emails[i],
+
+            first_name = names[i].split()[0],
+            last_name = names[i].split()[1] if ' ' in names[i] else None,
+            is_staff = 0,
+            is_active = 1,
+            date_joined = registr_times[i],
+
+            #id = models.IntegerField(primary_key=True)
+            #password = models.CharField(max_length=128)
+            #last_login = models.DateTimeField(blank=True, null=True)
+            #is_superuser = models.BooleanField()
+            #username = models.CharField(unique=True, max_length=150)
+            #first_name = models.CharField(max_length=150)
+            # last_name = models.CharField(max_length=150)
+            # email = models.CharField(max_length=254)
+            # is_staff = models.BooleanField()
+            # is_active = models.BooleanField()
+            # date_joined = models.DateTimeField()
         )
         user.save()
         print(user.id)
