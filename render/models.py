@@ -8,13 +8,31 @@
 from django.db import models
 
 
+class AuthUser(models.Model):
+    id = models.IntegerField(primary_key=True)
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.BooleanField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.BooleanField()
+    is_active = models.BooleanField()
+    date_joined = models.DateTimeField()
+
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_user'
+
+
 # class AuthGroup(models.Model):
 #     id = models.IntegerField(primary_key=True)
 #     name = models.CharField(unique=True, max_length=150)
 
-    # class Meta:
-    #     managed = False
-    #     db_table = 'auth_group'
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_group'
 
 
 # class AuthGroupPermissions(models.Model):
@@ -22,10 +40,10 @@ from django.db import models
 #     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 #     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
-#     # class Meta:
-#     #     managed = False
-#     #     db_table = 'auth_group_permissions'
-#     #     unique_together = (('group', 'permission'),)
+#     class Meta:
+#         managed = False
+#         db_table = 'auth_group_permissions'
+#         unique_together = (('group', 'permission'),)
 
 
 # class AuthPermission(models.Model):
@@ -109,22 +127,7 @@ from django.db import models
 #         db_table = 'django_session'
 
 
-class AuthUser(models.Model):
-    id = models.IntegerField(primary_key=True)
-    password = models.CharField(max_length=128)
-    last_login = models.DateTimeField(blank=True, null=True)
-    is_superuser = models.BooleanField()
-    username = models.CharField(unique=True, max_length=150)
-    first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
-    email = models.CharField(max_length=254)
-    is_staff = models.BooleanField()
-    is_active = models.BooleanField()
-    date_joined = models.DateTimeField()
-
-    class Meta:
-        managed = False
-        db_table = 'auth_user'
+###
 
 
 class Message(models.Model):
@@ -132,7 +135,3 @@ class Message(models.Model):
     image = models.FilePathField()
     message_time = models.DateTimeField()
     user = models.ForeignKey(AuthUser, on_delete=models.CASCADE, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'django_message'
