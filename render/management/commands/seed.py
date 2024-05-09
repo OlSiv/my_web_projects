@@ -1,6 +1,7 @@
 # <project>/<app>/management/commands/seed.py
 from django.core.management.base import BaseCommand
 from render import models
+from django.contrib.auth.models import User 
 
 # ./manage.py seed --mode=clear
 # ./manage.py seed --mode=refresh
@@ -26,7 +27,7 @@ class Command(BaseCommand):
 def clear_data():
     """Deletes all the table data"""
     # logger.info("Delete Address instances")
-    models.AuthUser.objects.all().delete()
+    User.objects.all().delete()
     models.Message.objects.all().delete()
 
 
@@ -40,7 +41,8 @@ def run_seed(self, mode):
     clear_data()
     if mode == MODE_CLEAR:
         return
-
+    
+    # >>>>>>>
 
     names = ["Винсет Вега", "Elon Musk", "Александр", "Мия Уоллес"]
     nics = ["@roizmangbn", "@elonmusk", "@sportsru", "@mia"]
@@ -97,33 +99,20 @@ def run_seed(self, mode):
         "2024-01-29T12:34:20.000000Z"
     ]
 
-# ---------------------------------------------------------
+# ---
     
     for i in range(4):
-        user = models.AuthUser(
+        user = User(
             password = passwords[0],
             is_superuser = 0,
             username = nics[i],
             last_login = registr_times[i],
             email = emails[i],
-
             first_name = names[i].split()[0],
-            last_name = names[i].split()[1] if ' ' in names[i] else None,
+            last_name = names[i].split()[1] if ' ' in names[i] else '',
             is_staff = 0,
             is_active = 1,
             date_joined = registr_times[i],
-
-            #id = models.IntegerField(primary_key=True)
-            #password = models.CharField(max_length=128)
-            #last_login = models.DateTimeField(blank=True, null=True)
-            #is_superuser = models.BooleanField()
-            #username = models.CharField(unique=True, max_length=150)
-            #first_name = models.CharField(max_length=150)
-            # last_name = models.CharField(max_length=150)
-            # email = models.CharField(max_length=254)
-            # is_staff = models.BooleanField()
-            # is_active = models.BooleanField()
-            # date_joined = models.DateTimeField()
         )
         user.save()
         print(user.id)
@@ -133,7 +122,6 @@ def run_seed(self, mode):
                 text_message = text_messages[k],
                 image = images[0],
                 message_time = message_times[k],
-                uuser = user
+                user = user
                 )
             message.save()
-# связи, ORM
