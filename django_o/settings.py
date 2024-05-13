@@ -33,7 +33,7 @@ DEBUG = True
 # DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['olsiv888.onrender.com']
-# ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 #<<<<<<<<<<<<
 
@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'django_o.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://dbolsiv888_user:oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl@dpg-cmj48fla73kc739o8usg-a.oregon-postgres.render.com/dbolsiv888',
+        default='postgres://dbolsiv888_user:YfycQQvQz9UnMO6Qi5GOGiGEp4Qcl96Z@dpg-cof746a1hbls7397l510-a.oregon-postgres.render.com/dbolsiv888_q621',
         conn_max_age=600
     )
 }
