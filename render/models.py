@@ -20,6 +20,9 @@ class Message(models.Model):
                              on_delete=models.CASCADE, 
                              null=True,
                              )
+    
+    def __str__(self):
+        return self.text_message
 
     class Meta:
         #managed = False
