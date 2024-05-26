@@ -1,0 +1,50 @@
+[
+    {
+        "model": "render.Users",
+        "pk": 1,
+        "fields": {
+            "name": "Anri",
+            "nic": "@anri",
+            "avatar": "non_pyth",
+            "email": "anri@mail.com",
+            "password": "11111111",
+            "registr_time": "2023-01-29T12:34:56.000000Z"
+        }
+    },
+    {
+        "model": "render.Users",
+        "pk": 2,
+        "fields": {
+            "name": "Бобби",
+            "nic": "@bobby",
+            "avatar": "non_pyth",
+            "email": "bobby@mail.com",
+            "password": "11111111",
+            "registr_time": "2023-01-28T12:34:56.000000Z"
+        }
+    },
+    {
+        "model": "render.Users",
+        "pk": 3,
+        "fields": {
+            "name": "Cindy",
+            "nic": "@cindy",
+            "avatar": "non_pyth",
+            "email": "cindy@mail.com",
+            "password": "11111111",
+            "registr_time": "2023-01-27T12:34:56.000000Z"
+        }
+    },
+    {
+        "model": "render.Users",
+        "pk": 4,
+        "fields": {
+            "name": "Dan",
+            "nic": "@dan",
+            "avatar": "non_pyth",
+            "email": "dan@mail.com",
+            "password": "11111111",
+            "registr_time": "2023-01-26T12:34:56.000000Z"
+        }
+    }
+]

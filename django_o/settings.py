@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 import dj_database_url
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,18 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
-
-
+#>>>>>>>>>>>>
+#up - render.com
+#down - local 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['olsiv888.onrender.com']
-# ALLOWED_HOSTS = []
+#DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
+#ALLOWED_HOSTS = ['olsiv888.onrender.com']
+ALLOWED_HOSTS = []
 
-
+#<<<<<<<<<<<<
 
 
 
@@ -73,7 +73,7 @@ ROOT_URLCONF = 'django_o.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], # <<<<<<<<<<<<<<<<<<
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,10 +104,20 @@ WSGI_APPLICATION = 'django_o.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://dbolsiv888_user:oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl@dpg-cmj48fla73kc739o8usg-a.oregon-postgres.render.com/dbolsiv888',
+        default='postgres://dbolsiv888_user:YfycQQvQz9UnMO6Qi5GOGiGEp4Qcl96Z@dpg-cof746a1hbls7397l510-a.oregon-postgres.render.com/dbolsiv888_q621',
         conn_max_age=600
     )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dbolsiv888',
+#         'USER': 'dbolsiv888_user',
+#         'PASSWORD': 'oonKOwpalHbD1e9QAKb8UL9HpzKbA7zl',
+#         'HOST': 'dpg-cmj48fla73kc739o8usg-a', # - ???
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation

@@ -91,6 +91,68 @@
         <t3>Последние сообщения</t3>
     </bl31>
 
+    <!-- block_LOOP -->
+
+    {% for i in mess1 %}
+    <bl41>
+        <bl42>
+            <k1>
+                <img src="{% static '/render/img/vinsent.png' %}" width='52' height="52" alt="Vinsent">
+            </k1>
+
+            <verh1>
+                <bl111>
+                    <tex1>Винсет Вега -----------------</tex1>
+                    <tex2>@roizmangbn</tex2>
+                </bl111>
+
+                <tex3>28 минут ---------
+
+                    <br>назад
+                </tex3>
+            </verh1>
+        </bl42>
+
+        <bl43>
+            <texto>
+                {{ i }}
+            </texto>
+        </bl43>
+
+        <bl44>
+            <bl45>
+                <ks1>
+                    <img src="{% static '/render/img/ks1.png' %}" alt="ks1">
+                </ks1>
+                <tt2>
+                    21
+                </tt2>
+            </bl45>
+
+            <bl46>
+                <bl45>
+                    <ks1>
+                        <img src="{% static '/render/img/ks2.png' %}" alt="ks2">
+                    </ks1>
+                    <tt2>
+                        23
+                    </tt2>
+            </bl46>
+
+            <bl47>
+                <bl45>
+                    <ks1>
+                        <img src="{% static '/render/img/ks3.png' %}" alt="ks3">
+                    </ks1>
+                    <tt2>
+                        9
+                    </tt2>
+            </bl47>
+        </bl44>
+    </bl41>
+
+    {% endfor %}
+
     <!-- block_4 VINSENT -->
 
     <bl41>
@@ -111,8 +173,7 @@
 
         <bl43>
             <texto>
-                У них там все немного не так. В смысле, у них там все точно так же, как и здесь, только немного
-                по-другому.
+                {{ mess1.0 }}
             </texto>
         </bl43>
 
@@ -329,6 +390,20 @@
             </bl47>
         </bl44>
     </bl41>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
