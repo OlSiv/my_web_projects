@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 def index(request):
 
     mess_m = Message.objects.all()[::-1]
-    users_names = User.objecta.all()
+    users_names = User.objects.all()
 
     context = {
         'mess1': mess_m, 

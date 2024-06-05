@@ -15,7 +15,7 @@ class Message(models.Model):
     id = models.BigAutoField(primary_key=True)
     text_message = models.CharField(max_length=512)
     image = models.CharField(max_length=100)
-    message_time = models.DateTimeField()
+    time_sent_at = models.DateTimeField()
     user = models.ForeignKey(User, 
                              on_delete=models.CASCADE, 
                              null=True,
