@@ -34,8 +34,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'render/css/styles.css' %}">
     <title>my site</title>
@@ -93,7 +93,9 @@
 
     <!-- block_LOOP -->
 
-    {% for i in mess1 %}
+    {% load humanize %}
+
+    {% for message in mess1 %}
     <bl41>
         <bl42>
             <k1>
@@ -102,13 +104,11 @@
 
             <verh1>
                 <bl111>
-                    <tex1>Винсет Вега -----------------</tex1>
-                    <tex2>@roizmangbn</tex2>
+                    <tex1>{{ message.user.first_name }} {{ message.user.last_name }}</tex1>
+                    <tex2>{{ message.user }}</tex2>
                 </bl111>
 
-                <tex3>28 минут ---------
-
-                    <br>назад
+                <tex3>{{ message.message_time|timesince }}<br>назад
                 </tex3>
             </verh1>
         </bl42>
@@ -155,7 +155,7 @@
 
     <!-- block_4 VINSENT -->
 
-    <bl41>
+    <!-- <bl41>
         <bl42>
             <k1>
                 <img src="{% static '/render/img/vinsent.png' %}" width='52' height="52" alt="Vinsent">
@@ -207,11 +207,11 @@
                     </tt2>
             </bl47>
         </bl44>
-    </bl41>
+    </bl41> -->
 
     <!-- block_5 ELON_MASK -->
 
-    <div class="grey-line"></div>
+    <!-- <div class="grey-line"></div>
 
     <bl41>
         <bl42>
@@ -265,11 +265,11 @@
                     </tt2>
             </bl47>
         </bl44>
-    </bl41>
+    </bl41> -->
 
     <!-- block_6 S_BUR -->
 
-    <div class="grey-line"></div>
+    <!-- <div class="grey-line"></div>
 
     <bl41>
         <bl42>
@@ -295,7 +295,6 @@
         </bl43>
 
         <bl55>
-            <!-- **********************************image********************************* -->
             <img src="{% static '/render/img/imat.png' %}" alt="Tennis">
         </bl55>
 
@@ -329,11 +328,11 @@
                     </tt2>
             </bl47>
         </bl44>
-    </bl41>
+    </bl41> -->
 
     <!-- block_6 MIA -->
 
-    <div class="grey-line"></div>
+    <!-- <div class="grey-line"></div>
 
     <bl41>
         <bl42>
@@ -389,7 +388,7 @@
                     </tt2>
             </bl47>
         </bl44>
-    </bl41>
+    </bl41> -->
 
 
 
