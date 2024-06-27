@@ -30,10 +30,16 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #DEBUG = True
-DEBUG = 'RENDER' not in os.environ
+#DEBUG = 'RENDER' not in os.environ
+# +
+DEBUG = False  
 
 #ALLOWED_HOSTS = ['olsiv888.onrender.com', '127.0.0.1']
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+# +
+ALLOWED_HOSTS = ['olsiv888.onrender.com', 
+                 'www.olsiv888.onrender.com', 
+                 '127.0.0.1']
 
 #<<<<<<<<<<<<
 
