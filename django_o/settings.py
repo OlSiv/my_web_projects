@@ -37,9 +37,7 @@ DEBUG = False
 #ALLOWED_HOSTS = ['olsiv888.onrender.com', '127.0.0.1']
 #ALLOWED_HOSTS = []
 # +
-ALLOWED_HOSTS = ['olsiv888.onrender.com', 
-                 'www.olsiv888.onrender.com', 
-                 '127.0.0.1']
+ALLOWED_HOSTS = []
 
 #<<<<<<<<<<<<
 
