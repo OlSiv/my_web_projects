@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #DEBUG = True
-DEBUG = 'RENDER' not in os.environ
+#DEBUG = 'RENDER' not in os.environ
+
+DEBUG = True
 
 #ALLOWED_HOSTS = ['olsiv888.onrender.com', '127.0.0.1']
 ALLOWED_HOSTS = ['*']
@@ -73,7 +75,7 @@ ROOT_URLCONF = 'django_o.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'], # <<<<<<<<<<<<<<<<<<
+        'DIRS': ['templates'], # <<<<<<<<<
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
